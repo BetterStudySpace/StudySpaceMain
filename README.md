@@ -9,8 +9,8 @@ https://www.lynda.com/React-js-tutorials/Babel-inline-transpiling/496905/573028-
 # To Run the Project Right Now
 
 Go to the file location of the repo on your pc. Then type this in the console:
-'''
+```
 httpster -d ./dist -p 3000
-'''
+```
 The project should be running on localhost:3000. We are going to make this a little different later on (following the tutorial at least)
 
