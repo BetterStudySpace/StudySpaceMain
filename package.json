@@ -1,0 +1,11 @@
+{
+  "name": "studyspace",
+  "version": "1.0.0",
+  "description": "A project used to aid students in finding a place to study on campus at the University of Florida.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Marie Urmano",
+  "license": "ISC"
+}
