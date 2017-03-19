@@ -19,5 +19,11 @@ How to start the virtual environment in your directory (myvenv is the name of th
 myvenv\Scripts\activate
 ```
 
+How to start the webserver locally:
+
+```
+python manage.py runserver
+```
+
 Follow this tutorial:
 https://tutorial.djangogirls.org/en/deploy/#debugging-tips
