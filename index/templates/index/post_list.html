@@ -33,6 +33,20 @@
     		</ul>
     	</div>
 
+   	{% for post in posts %}
+    	<div>
+    		<h2>
+    			{{post.title}}
+    		</h2>
+    		<ul>
+				<p> Hours: {{post.published_date}} </p>
+				<p>Current Capacity: {{post.published_time}}</p>
+				<p>	Rate the Capacity</p>
+    		</ul>
+    	</div>
+    {% endfor %}
+
+
     	<div>
     		<h2>
     		<a href="https://ufl.evanced.info/dibs">
