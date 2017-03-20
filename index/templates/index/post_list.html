@@ -5,47 +5,69 @@
     <body>
 
     	<div>
-
-    		<h1> Study Space: Study Smarter
+    		<h1> 
+                    Study Space: Study Smarter
     		</h1>
-
     	</div>
 
+    {% for library in libraries %}
     	<div>
-    		<h2>
-    			Marston Science Library
-    		</h2>
-    		<ul>
-				<p> Hours: 8:00 AM - 2:00 AM </p>
-				<p> Current Capacity: 75% full</p>
-				<p>	Rate the Capacity</p>
-    		</ul>
-    	</div>
+                {% if library.title == 'Marston Science Library (Mon-Thurs)' %}
+                    {% if library.dayofweek == 'Monday' %}
+                        <h2><p> Marston Science Library </p></h2>
+                        <p> {{library.hours}} </p>
+                        <p>Putting floor information here as well</p>
 
-    	<div>
-    		<h2>
-    			Library West
-    		</h2>
-    		<ul>
-				<p> Hours: 24 Hours </p>
-				<p>Current Capacity: 20% full</p>
-				<p>	Rate the Capacity</p>
-    		</ul>
-    	</div>
+                    {% elif library.dayofweek == 'Tuesday' %}
+                        <h2><p> Marston Science Library </p></h2>
+                        <p> {{library.hours}} </p>
+                        <p>Putting floor information here as well</p>
 
-   	{% for post in posts %}
-    	<div>
-    		<h2>
-    			{{post.title}}
-    		</h2>
+                    {% elif library.dayofweek == 'Wednesday' %}
+                        <h2><p> Marston Science Library </p></h2>
+                        <p> {{library.hours}} </p>
+                        <p>Putting floor information here as well</p>
+
+                    {% elif library.dayofweek == 'Thursday' %}
+                        <h2><p> Marston Science Library </p></h2>
+                        <p> {{library.hours}} </p>
+                        <p>Putting floor information here as well</p>
+
+                    {% endif %}
+
+                {% elif library.title == 'Marston Science Library (Fri)' %}
+                    {% if library.dayofweek == 'Friday' %}
+                        <h2><p> Marston Science Library </p></h2>
+                        <p> {{library.hours}} </p>
+                        <p>Putting floor information here as well</p>
+                    {% endif %}
+
+                {% elif library.title == 'Marston Science Library (Sat)' %}
+                    {% if library.dayofweek == 'Saturday' %}
+                        <h2><p> Marston Science Library </p></h2>
+                        <p> {{library.hours}} </p>
+                        <p>Putting floor information here as well</p>
+                    {% endif %}
+
+                {% elif library.title == 'Marston Science Library (Sun)' %}
+                    {% if library.dayofweek == 'Sunday' %}
+                        <h2><p> Marston Science Library </p></h2>
+                        <p> {{library.hours}} </p>
+                        <p>Putting floor information here as well</p>
+
+                    {% endif %}
+                    
+                {% elif library.title == 'Library West' %}
+                    <h2><p>{{library.title}}</p></h2>
+                    <p> {{library.hours}} </p>
+                    <p>Putting floor information here as well</p>
+
+                {% endif %}
     		<ul>
-				<p> Hours: {{post.published_date}} </p>
-				<p>Current Capacity: {{post.published_time}}</p>
-				<p>	Rate the Capacity</p>
+
     		</ul>
     	</div>
     {% endfor %}
-
 
     	<div>
     		<h2>
@@ -54,6 +76,5 @@
 			</a>
     		</h2>
        	</div>
-
     </body>
 </html>
