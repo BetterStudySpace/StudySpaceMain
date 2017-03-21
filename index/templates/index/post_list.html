@@ -16,22 +16,67 @@
                     {% if library.dayofweek == 'Monday' %}
                         <h2><p> Marston Science Library </p></h2>
                         <p> {{library.hours}} </p>
-                        <p>Putting floor information here as well</p>
+
+                                {% for floor in floors %}
+                                    {% if floor.libname == 'Marston Science Library' %}
+                                        <p>Floor {{floor.floor_number}}</p>
+                                        <p>Current Capacity: {{floor.current_capacity}}</p>
+                                        {% load mytags %}
+                                        <p>Rated Capacity: {{floor.rated_capacity}} 
+                                            <!-- {{floor.changerating0}} -->
+                                        </p>
+                                            <!-- {{floor.changethecapacity}} -->
+                                    {% endif %}
+                                {% endfor %}
 
                     {% elif library.dayofweek == 'Tuesday' %}
                         <h2><p> Marston Science Library </p></h2>
                         <p> {{library.hours}} </p>
-                        <p>Putting floor information here as well</p>
+
+                                {% for floor in floors %}
+                                    {% if floor.libname == 'Marston Science Library' %}
+                                        <p>Floor {{floor.floor_number}}</p>
+                                        <p>Current Capacity: {{floor.current_capacity}}</p>
+                                        {% load mytags %}
+                                        <p>Rated Capacity: {{floor.rated_capacity}} 
+                                            <!-- {{floor.changerating0}} -->
+                                        </p>
+                                            <!-- {{floor.changethecapacity}} -->
+                                    {% endif %}
+                                {% endfor %}
+
 
                     {% elif library.dayofweek == 'Wednesday' %}
                         <h2><p> Marston Science Library </p></h2>
                         <p> {{library.hours}} </p>
-                        <p>Putting floor information here as well</p>
+
+                                {% for floor in floors %}
+                                    {% if floor.libname == 'Marston Science Library' %}
+                                        <p>Floor {{floor.floor_number}}</p>
+                                        <p>Current Capacity: {{floor.current_capacity}}</p>
+                                        {% load mytags %}
+                                        <p>Rated Capacity: {{floor.rated_capacity}} 
+                                            <!-- {{floor.changerating0}} -->
+                                        </p>
+                                            <!-- {{floor.changethecapacity}} -->
+                                    {% endif %}
+                                {% endfor %}
 
                     {% elif library.dayofweek == 'Thursday' %}
                         <h2><p> Marston Science Library </p></h2>
                         <p> {{library.hours}} </p>
-                        <p>Putting floor information here as well</p>
+
+                                {% for floor in floors %}
+                                    {% if floor.libname == 'Marston Science Library' %}
+                                        <p>Floor {{floor.floor_number}}</p>
+                                        <p>Current Capacity: {{floor.current_capacity}}</p>
+                                        {% load mytags %}
+                                        <p>Rated Capacity: {{floor.rated_capacity}} 
+                                            <!-- {{floor.changerating0}} -->
+                                        </p>
+                                            <!-- {{floor.changethecapacity}} -->
+                                    {% endif %}
+                                {% endfor %}
 
                     {% endif %}
 
@@ -39,28 +84,76 @@
                     {% if library.dayofweek == 'Friday' %}
                         <h2><p> Marston Science Library </p></h2>
                         <p> {{library.hours}} </p>
-                        <p>Putting floor information here as well</p>
+
+                                {% for floor in floors %}
+                                    {% if floor.libname == 'Marston Science Library' %}
+                                        <p>Floor {{floor.floor_number}}</p>
+                                        <p>Current Capacity: {{floor.current_capacity}}</p>
+                                        {% load mytags %}
+                                        <p>Rated Capacity: {{floor.rated_capacity}} 
+                                            <!-- {{floor.changerating0}} -->
+                                        </p>
+                                            <!-- {{floor.changethecapacity}} -->
+                                    {% endif %}
+                                {% endfor %}
+
                     {% endif %}
 
                 {% elif library.title == 'Marston Science Library (Sat)' %}
                     {% if library.dayofweek == 'Saturday' %}
                         <h2><p> Marston Science Library </p></h2>
                         <p> {{library.hours}} </p>
-                        <p>Putting floor information here as well</p>
+
+                                {% for floor in floors %}
+                                    {% if floor.libname == 'Marston Science Library' %}
+                                        <p>Floor {{floor.floor_number}}</p>
+                                        <p>Current Capacity: {{floor.current_capacity}}</p>
+                                        {% load mytags %}
+                                        <p>Rated Capacity: {{floor.rated_capacity}} 
+                                            <!-- {{floor.changerating0}} -->
+                                        </p>
+                                            <!-- {{floor.changethecapacity}} -->
+                                    {% endif %}
+                                {% endfor %}
+
                     {% endif %}
 
                 {% elif library.title == 'Marston Science Library (Sun)' %}
                     {% if library.dayofweek == 'Sunday' %}
                         <h2><p> Marston Science Library </p></h2>
                         <p> {{library.hours}} </p>
-                        <p>Putting floor information here as well</p>
+
+                                {% for floor in floors %}
+                                    {% if floor.libname == 'Marston Science Library' %}
+                                        <p>Floor {{floor.floor_number}}</p>
+                                        <p>Current Capacity: {{floor.current_capacity}}</p>
+                                        {% load mytags %}
+                                        <p>Rated Capacity: {{floor.rated_capacity}} 
+                                            <!-- {{floor.changerating0}} -->
+                                        </p>
+                                            <!-- {{floor.changethecapacity}} -->
+                                    {% endif %}
+                                {% endfor %}
+
 
                     {% endif %}
                     
                 {% elif library.title == 'Library West' %}
                     <h2><p>{{library.title}}</p></h2>
                     <p> {{library.hours}} </p>
-                    <p>Putting floor information here as well</p>
+
+                                {% for floor in floors %}
+                                    {% if floor.libname == 'Marston Science Library' %}
+                                        <p>Floor {{floor.floor_number}}</p>
+                                        <p>Current Capacity: {{floor.current_capacity}}</p>
+                                        {% load mytags %}
+                                        <p>Rated Capacity: {{floor.rated_capacity}} 
+                                            <!-- {{floor.changerating0}} -->
+                                        </p>
+                                            <!-- {{floor.changethecapacity}} -->
+                                    {% endif %}
+                                {% endfor %}
+
 
                 {% endif %}
     		<ul>
