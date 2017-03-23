@@ -1,363 +1,58 @@
+{% load staticfiles %}
 <html>
     <head>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/index.css' %}">
     	<title>StudySpace: Study Smarter</title>
     </head>
     <body>
-
-    	<div>
+        <header>
     		<h1> 
-                    Study Space: Study Smarter
+                Study Space: Study Smarter
     		</h1>
-    	</div>
-
+            <img class="logo" src="static/hci_logo.png">
+    </header>
     {% for library in libraries %}
-    	<div>
+    	<div class="libraries">
                 {% if library.title == 'Marston Science Library (Mon-Thurs)' %}
                     {% if library.dayofweek == 'Monday' %}
-                        <h2><p> Marston Science Library </p></h2>
-                        <p> {{library.hours}} </p>
-
-                                {% for floor in floors %}
-                                        {% if floor.libname == 'Marston Science Library' %}
-                                            {% if floor.floor_number == 1 %}
-                                                <p>Floor {{ floor.floor_number}} </p>
-
-                                                <p>Current Capacity: {{ floor.current_capacity }} </p>
-
-                                                <p>Rated Capacity:  {{ floor.rated_capacity }}  %} 
-                                                </p>
-
-                                                    <form method = "POST" action = "/submit">
-                                                    {% csrf_token %}
-                                                    <input type = "range" name = "numRange" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
-
-                                                        <span id = "range"> 50% </span>
-
-                                                        <button type = "submit">Submit
-                                                        </button>
-                                                    </form>
-
-                                            {% elif floor.floor_number == 2 %}
-
-                                                <p>Floor {{ floor.floor_number}}</p>
-
-                                                <p>Current Capacity: {{ floor.current_capacity }} </p>
-
-                                                <p>Rated Capacity:  {{ floor.rated_capacity }}  
-                                                </p>
-
-                                                    <form method = "POST" action = "/submit1">
-                                                    {% csrf_token %}
-                                                    <input type = "range" name = "numRange2" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
-
-                                                        <span id = "range"> 50% </span>
-
-                                                        <button type = "submit">Submit
-                                                        </button>
-                                                    </form>
-
-
-                                            {% elif floor.floor_number == 3 %}
-
-                                                <p>Floor {{ floor.floor_number}}</p>
-
-                                                <p>Current Capacity: {{ floor.current_capacity }} </p>
-
-                                                <p>Rated Capacity:  {{ floor.rated_capacity }}  
-                                                </p>
-
-                                                    <form method = "POST" action = "/submit2">
-                                                    {% csrf_token %}
-                                                    <input type = "range" name = "numRange3" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
-
-                                                        <span id = "range"> 50% </span>
-
-                                                        <button type = "submit">Submit
-                                                        </button>
-                                                    </form>
-
-
-                                            {% elif floor.floor_number == 4 %}
-
-                                                <p>Floor {{ floor.floor_number}}</p>
-
-                                                <p>Current Capacity: {{ floor.current_capacity }} </p>
-
-                                                <p>Rated Capacity:  {{ floor.rated_capacity }} 
-                                                </p>
-
-                                                    <form method = "POST" action = "/submit3">
-                                                    {% csrf_token %}
-                                                    <input type = "range" name = "numRange4" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
-
-                                                        <span id = "range"> 50% </span>
-
-                                                        <button type = "submit">Submit
-                                                        </button>
-                                                    </form>
-
-                                            {% elif floor.floor_number == 5 %}
-
-                                                <p>Floor {{ floor.floor_number}}</p>
-
-                                                <p>Current Capacity: {{ floor.current_capacity }} </p>
-
-                                                <p>Rated Capacity:  {{ floor.rated_capacity }} 
-                                                </p>
-
-                                                    <form method = "POST" action = "/submit4">
-                                                    {% csrf_token %}
-                                                    <input type = "range" name = "numRange5" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
-
-                                                        <span id = "range"> 50% </span>
-
-                                                        <button type = "submit">Submit
-                                                        </button>
-                                                    </form>
-                                            {% endif %}
-
-                                        {% endif %}
-                                        {% endfor %}
-
-                    {% elif library.dayofweek == 'Tuesday' %}
-                        <h2><p> Marston Science Library </p></h2>
-                        <p> {{library.hours}} </p>
-
-                                {% for floor in floors %}
-                                        {% if floor.libname == 'Marston Science Library' %}
-                                            {% if floor.floor_number == 1 %}
-                                                <p>Floor {{ floor.floor_number}}</p>
-
-                                                <p>Current Capacity: {{ floor.current_capacity }} </p>
-
-                                                <p>Rated Capacity:  {{ floor.rated_capacity }}  
-                                                </p>
-
-                                                    <form method = "POST" action = "/submit">
-                                                    {% csrf_token %}
-                                                    <input type = "range" name = "numRange" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
-
-                                                        <span id = "range"> 50% </span>
-
-                                                        <button type = "submit">Submit
-                                                        </button>
-                                                    </form>
-
-                                            {% elif floor.floor_number == 2 %}
-
-                                                <p>Floor {{ floor.floor_number}}</p>
-
-                                                <p>Current Capacity: {{ floor.current_capacity }} </p>
-
-                                                <p>Rated Capacity:  {{ floor.rated_capacity }}  
-                                                </p>
-
-                                                    <form method = "POST" action = "/submit1">
-                                                    {% csrf_token %}
-                                                    <input type = "range" name = "numRange1" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
-
-                                                        <span id = "range"> 50% </span>
-
-                                                        <button type = "submit">Submit
-                                                        </button>
-                                                    </form>
-
-
-                                            {% elif floor.floor_number == 3 %}
-
-                                                <p>Floor {{ floor.floor_number}}</p>
-
-                                                <p>Current Capacity: {{ floor.current_capacity }} </p>
-
-                                                <p>Rated Capacity:  {{ floor.rated_capacity }}  
-                                                </p>
-
-                                                    <form method = "POST" action = "/submit2">
-                                                    {% csrf_token %}
-                                                    <input type = "range" name = "numRange2" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
-
-                                                        <span id = "range"> 50% </span>
-
-                                                        <button type = "submit">Submit
-                                                        </button>
-                                                    </form>
-
-
-                                            {% elif floor.floor_number == 4 %}
-
-                                                <p>Floor {{ floor.floor_number}}</p>
-
-                                                <p>Current Capacity: {{ floor.current_capacity }} </p>
-
-                                                <p>Rated Capacity:  {{ floor.rated_capacity }}  
-                                                </p>
-
-                                                    <form method = "POST" action = "/submit3">
-                                                    {% csrf_token %}
-                                                    <input type = "range" name = "numRange3" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
-
-                                                        <span id = "range"> 50% </span>
-
-                                                        <button type = "submit">Submit
-                                                        </button>
-                                                    </form>
-
-                                            {% elif floor.floor_number == 5 %}
-
-                                                <p>Floor {{ floor.floor_number}}</p>
-
-                                                <p>Current Capacity: {{ floor.current_capacity }} </p>
-
-                                                <p>Rated Capacity:  {{ floor.rated_capacity }} 
-                                                </p>
-
-                                                    <form method = "POST" action = "/submit4">
-                                                    {% csrf_token %}
-                                                    <input type = "range" name = "numRange4" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
-
-                                                        <span id = "range"> 50% </span>
-
-                                                        <button type = "submit">Submit
-                                                        </button>
-                                                    </form>
-                                                {% endif %}
-
-                                        {% endif %}
-                                        {% endfor %}
-
-
-                    {% elif library.dayofweek == 'Wednesday' %}
-                        <h2><p> Marston Science Library </p></h2>
-                        <p> {{library.hours}} </p>
-                                    {% for floor in floors %}
-                                        {% if floor.libname == 'Marston Science Library' %}
-                                            {% if floor.floor_number == 1 %}
-                                                <p>Floor {{ floor.floor_number}}</p>
-
-                                                <p>Current Capacity: {{ floor.current_capacity }} </p>
-
-                                                <p>Rated Capacity:  {{ floor.rated_capacity }}  
-                                                </p>
-
-                                                    <form method = "POST" action = "/submit">
-                                                    {% csrf_token %}
-                                                    <input type = "range" name = "numRange" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
-
-                                                        <span id = "range"> 50% </span>
-
-                                                        <button type = "submit">Submit
-                                                        </button>
-                                                    </form>
-
-                                            {% elif floor.floor_number == 2 %}
-                                                <p>Floor {{ floor.floor_number}}</p>
-
-                                                <p>Current Capacity: {{ floor.current_capacity }} </p>
-
-                                                <p>Rated Capacity:  {{ floor.rated_capacity }}  
-                                                </p>
-
-                                                    <form method = "POST" action = "/submit1">
-                                                    {% csrf_token %}
-                                                    <input type = "range" name = "numRange1" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
-
-                                                        <span id = "range"> 50% </span>
-
-                                                        <button type = "submit">Submit
-                                                        </button>
-                                                    </form>
-
-
-                                            {% elif floor.floor_number == 3 %}
-                                                <p>Floor {{ floor.floor_number}}</p>
-
-                                                <p>Current Capacity: {{ floor.current_capacity }} </p>
-
-                                                <p>Rated Capacity:  {{ floor.rated_capacity }}  
-                                                </p>
-
-                                                    <form method = "POST" action = "/submit2">
-                                                    {% csrf_token %}
-                                                    <input type = "range" name = "numRange2" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
-
-                                                        <span id = "range"> 50% </span>
-
-                                                        <button type = "submit">Submit
-                                                        </button>
-                                                    </form>
-
-
-                                            {% elif floor.floor_number == 4 %}
-                                                <p>Floor {{ floor.floor_number}}</p>
-
-                                                <p>Current Capacity: {{ floor.current_capacity }} </p>
-
-                                                <p>Rated Capacity:  {{ floor.rated_capacity }}  
-                                                </p>
-
-                                                    <form method = "POST" action = "/submit3">
-                                                    {% csrf_token %}
-                                                    <input type = "range" name = "numRange3" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
-
-                                                        <span id = "range"> 50% </span>
-
-                                                        <button type = "submit">Submit
-                                                        </button>
-                                                    </form>
-
-                                            {% elif floor.floor_number == 5 %}
-                                                <p>Floor {{ floor.floor_number}}</p>
-
-                                                <p>Current Capacity: {{ floor.current_capacity }} </p>
-
-                                                <p>Rated Capacity:  {{ floor.rated_capacity }}  
-                                                </p>
-
-                                                    <form method = "POST" action = "/submit4">
-                                                    {% csrf_token %}
-                                                    <input type = "range" name = "numRange4" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
-
-                                                        <span id = "range"> 50% </span>
-
-                                                        <button type = "submit">Submit
-                                                        </button>
-                                                    </form>
-                                            {% endif %}
-
-                                        {% endif %}
-                                        {% endfor %}
-
-                    {% elif library.dayofweek == 'Thursday' %}
-                        <h2><p> Marston Science Library </p></h2>
-                        <p> {{library.hours}} </p>
-
+<h2 class="library_name">Marston Science Library</h2>
+                        <div class="operation">
+                        <h3>Hours of Operation</h3>
+                        <h3 class="hours">{{library.hours}}</h3>
+                        </>
+                        <div class="floor">
                                {% for floor in floors %}
                                         {% if floor.libname == 'Marston Science Library' %}
                                             {% if floor.floor_number == 1 %}
-                                                <p>Floor {{ floor.floor_number}}</p>
+                                            <div class="floor_indiv">
+                                                
+                                                <p class="floor_number">Floor {{ floor.floor_number}}</p>
 
-                                                <p>Current Capacity: {{ floor.current_capacity }} </p>
+                                                 <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Rated Capacity:  {{ floor.rated_capacity }}  
+                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full  
                                                 </p>
-
+                                                    
                                                     <form method = "POST" action = "/submit">
                                                     {% csrf_token %}
                                                     <input type = "range" name = "numRange" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
 
                                                         <span id = "range"> 50% </span>
-
+                                                       <div class="submit">
                                                         <button type = "submit" name = "save">Submit
                                                         </button>
+                                                    
+                                                    </div>
                                                     </form>
-
+                                                </div>
                                             {% elif floor.floor_number == 2 %}
+                                            <div class="floor_indiv">
+                                                <p class="floor_number">Floor {{ floor.floor_number}}</p>
 
-                                                <p>Floor {{ floor.floor_number}}</p>
+                                                <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Current Capacity: {{ floor.current_capacity }} </p>
-
-                                                <p>Rated Capacity:  {{ floor.rated_capacity }} 
+                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full 
                                                 </p>
 
                                                     <form method = "POST" action = "/submit">
@@ -365,19 +60,20 @@
                                                     <input type = "range" name = "numRange1" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
 
                                                         <span id = "range"> 50% </span>
-
+                                                        <div class="submit">
                                                         <button type = "submit" name = >Submit
                                                         </button>
+                                                    </div>
                                                     </form>
-
+                                                </div>
 
                                             {% elif floor.floor_number == 3 %}
+                                            <div class="floor_indiv">
+                                                <p class="floor_number">Floor {{ floor.floor_number}}</p>
 
-                                                <p>Floor {{ floor.floor_number}}</p>
+                                                <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Current Capacity: {{ floor.current_capacity }} </p>
-
-                                                <p>Rated Capacity:  {{ floor.rated_capacity }}   
+                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full   
                                                 </p>
 
                                                     <form method = "POST" action = "/submit2">
@@ -385,19 +81,20 @@
                                                     <input type = "range" name = "numRange2" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
 
                                                         <span id = "range"> 50% </span>
-
+                                                        <div class="submit">
                                                         <button type = "submit">Submit
                                                         </button>
+                                                    </div>
                                                     </form>
-
+                                                </div>
 
                                             {% elif floor.floor_number == 4 %}
+                                            <div class="floor_indiv">
+                                                <p class="floor_number">Floor {{ floor.floor_number}}</p>
 
-                                                <p>Floor {{ floor.floor_number}}</p>
+                                                <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Current Capacity: {{ floor.current_capacity }} </p>
-
-                                                <p>Rated Capacity:  {{ floor.rated_capacity }}  
+                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full  
                                                 </p>
 
                                                     <form method = "POST" action = "/submit3">
@@ -405,18 +102,19 @@
                                                     <input type = "range" name = "numRange3" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
 
                                                         <span id = "range"> 50% </span>
-
+                                                        <div class="submit">
                                                         <button type = "submit">Submit
                                                         </button>
+                                                    </div>
                                                     </form>
-
+                                                </div>
                                             {% elif floor.floor_number == 5 %}
+                                            <div class="floor_indiv">
+                                                <p class="floor_number">Floor {{ floor.floor_number}}</p>
 
-                                                <p>Floor {{ floor.floor_number}}</p>
+                                                <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Current Capacity: {{ floor.current_capacity }} </p>
-
-                                                <p>Rated Capacity:  {{ floor.rated_capacity }} 
+                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full 
                                                 </p>
 
                                                     <form method = "POST" action = "/submit4">
@@ -424,68 +122,78 @@
                                                     <input type = "range" name = "numRange4" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
 
                                                         <span id = "range"> 50% </span>
-
+                                                        <div class="submit">
                                                         <button type = "submit">Submit
                                                         </button>
+                                                        </div>
                                                     </form>
+                                                </div>
                                                 {% endif %}
 
                                         {% endif %}
                                         {% endfor %}
-                    {% endif %}
+                </div>
+                            
 
-                {% elif library.title == 'Marston Science Library (Fri)' %}
-                    {% if library.dayofweek == 'Friday' %}
-                        <h2><p> Marston Science Library </p></h2>
-                        <p> {{library.hours}} </p>
-
-{% for floor in floors %}
+                    {% elif library.dayofweek == 'Tuesday' %}
+<h2 class="library_name">Marston Science Library</h2>
+                        <div class="operation">
+                        <h3>Hours of Operation</h3>
+                        <h3 class="hours">{{library.hours}}</h3>
+                        </>
+                        <div class="floor">
+                               {% for floor in floors %}
                                         {% if floor.libname == 'Marston Science Library' %}
                                             {% if floor.floor_number == 1 %}
-                                                <p>Floor {{ floor.floor_number}}</p>
+                                            <div class="floor_indiv">
+                                                
+                                                <p class="floor_number">Floor {{ floor.floor_number}}</p>
 
-                                                <p>Current Capacity: {{ floor.current_capacity }} </p>
+                                                 <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Rated Capacity:  {{ floor.rated_capacity }}  
+                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full  
                                                 </p>
-
+                                                    
                                                     <form method = "POST" action = "/submit">
                                                     {% csrf_token %}
                                                     <input type = "range" name = "numRange" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
 
                                                         <span id = "range"> 50% </span>
-
-                                                        <button type = "submit">Submit
+                                                       <div class="submit">
+                                                        <button type = "submit" name = "save">Submit
                                                         </button>
+                                                    
+                                                    </div>
                                                     </form>
-
+                                                </div>
                                             {% elif floor.floor_number == 2 %}
+                                            <div class="floor_indiv">
+                                                <p class="floor_number">Floor {{ floor.floor_number}}</p>
 
-                                                <p>Floor {{ floor.floor_number}}</p>
+                                                <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Current Capacity: {{ floor.current_capacity }} </p>
-
-                                                <p>Rated Capacity:  {{ floor.rated_capacity }}  
+                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full 
                                                 </p>
 
-                                                    <form method = "POST" action = "/submit1">
+                                                    <form method = "POST" action = "/submit">
                                                     {% csrf_token %}
                                                     <input type = "range" name = "numRange1" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
 
                                                         <span id = "range"> 50% </span>
-
-                                                        <button type = "submit">Submit
+                                                        <div class="submit">
+                                                        <button type = "submit" name = >Submit
                                                         </button>
+                                                    </div>
                                                     </form>
-
+                                                </div>
 
                                             {% elif floor.floor_number == 3 %}
+                                            <div class="floor_indiv">
+                                                <p class="floor_number">Floor {{ floor.floor_number}}</p>
 
-                                                <p>Floor {{ floor.floor_number}}</p>
+                                                <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Current Capacity: {{ floor.current_capacity }} </p>
-
-                                                <p>Rated Capacity:  {{ floor.rated_capacity }}  
+                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full   
                                                 </p>
 
                                                     <form method = "POST" action = "/submit2">
@@ -493,19 +201,20 @@
                                                     <input type = "range" name = "numRange2" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
 
                                                         <span id = "range"> 50% </span>
-
+                                                        <div class="submit">
                                                         <button type = "submit">Submit
                                                         </button>
+                                                    </div>
                                                     </form>
-
+                                                </div>
 
                                             {% elif floor.floor_number == 4 %}
+                                            <div class="floor_indiv">
+                                                <p class="floor_number">Floor {{ floor.floor_number}}</p>
 
-                                                <p>Floor {{ floor.floor_number}}</p>
+                                                <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Current Capacity: {{ floor.current_capacity }} </p>
-
-                                                <p>Rated Capacity:  {{ floor.rated_capacity }}  
+                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full  
                                                 </p>
 
                                                     <form method = "POST" action = "/submit3">
@@ -513,18 +222,19 @@
                                                     <input type = "range" name = "numRange3" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
 
                                                         <span id = "range"> 50% </span>
-
+                                                        <div class="submit">
                                                         <button type = "submit">Submit
                                                         </button>
+                                                    </div>
                                                     </form>
-
+                                                </div>
                                             {% elif floor.floor_number == 5 %}
+                                            <div class="floor_indiv">
+                                                <p class="floor_number">Floor {{ floor.floor_number}}</p>
 
-                                                <p>Floor {{ floor.floor_number}}</p>
+                                                <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Current Capacity: {{ floor.current_capacity }} </p>
-
-                                                <p>Rated Capacity:  {{ floor.rated_capacity }}  
+                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full 
                                                 </p>
 
                                                     <form method = "POST" action = "/submit4">
@@ -532,69 +242,439 @@
                                                     <input type = "range" name = "numRange4" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
 
                                                         <span id = "range"> 50% </span>
-
+                                                        <div class="submit">
                                                         <button type = "submit">Submit
                                                         </button>
+                                                        </div>
                                                     </form>
+                                                </div>
                                                 {% endif %}
 
                                         {% endif %}
                                         {% endfor %}
+               
+                </div>
 
+
+                    {% elif library.dayofweek == 'Wednesday' %}
+                        <h2 class="library_name">Marston Science Library</h2>
+                        <div class="operation">
+                        <h3>Hours of Operation</h3>
+                        <h3 class="hours">{{library.hours}}</h3>
+                        </>
+                        <div class="floor">
+                               {% for floor in floors %}
+                                        {% if floor.libname == 'Marston Science Library' %}
+                                            {% if floor.floor_number == 1 %}
+                                            <div class="floor_indiv">
+                                                
+                                                <p class="floor_number">Floor {{ floor.floor_number}}</p>
+
+                                                 <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
+
+                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full  
+                                                </p>
+                                                    
+                                                    <form method = "POST" action = "/submit">
+                                                    {% csrf_token %}
+                                                    <input type = "range" name = "numRange" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
+
+                                                        <span id = "range"> 50% </span>
+                                                       <div class="submit">
+                                                        <button type = "submit" name = "save">Submit
+                                                        </button>
+                                                    
+                                                    </div>
+                                                    </form>
+                                                </div>
+                                            {% elif floor.floor_number == 2 %}
+                                            <div class="floor_indiv">
+                                                <p class="floor_number">Floor {{ floor.floor_number}}</p>
+
+                                                <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
+
+                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full 
+                                                </p>
+
+                                                    <form method = "POST" action = "/submit">
+                                                    {% csrf_token %}
+                                                    <input type = "range" name = "numRange1" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
+
+                                                        <span id = "range"> 50% </span>
+                                                        <div class="submit">
+                                                        <button type = "submit" name = >Submit
+                                                        </button>
+                                                    </div>
+                                                    </form>
+                                                </div>
+
+                                            {% elif floor.floor_number == 3 %}
+                                            <div class="floor_indiv">
+                                                <p class="floor_number">Floor {{ floor.floor_number}}</p>
+
+                                                <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
+
+                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full   
+                                                </p>
+
+                                                    <form method = "POST" action = "/submit2">
+                                                    {% csrf_token %}
+                                                    <input type = "range" name = "numRange2" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
+
+                                                        <span id = "range"> 50% </span>
+                                                        <div class="submit">
+                                                        <button type = "submit">Submit
+                                                        </button>
+                                                    </div>
+                                                    </form>
+                                                </div>
+
+                                            {% elif floor.floor_number == 4 %}
+                                            <div class="floor_indiv">
+                                                <p class="floor_number">Floor {{ floor.floor_number}}</p>
+
+                                                <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
+
+                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full  
+                                                </p>
+
+                                                    <form method = "POST" action = "/submit3">
+                                                    {% csrf_token %}
+                                                    <input type = "range" name = "numRange3" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
+
+                                                        <span id = "range"> 50% </span>
+                                                        <div class="submit">
+                                                        <button type = "submit">Submit
+                                                        </button>
+                                                    </div>
+                                                    </form>
+                                                </div>
+                                            {% elif floor.floor_number == 5 %}
+                                            <div class="floor_indiv">
+                                                <p class="floor_number">Floor {{ floor.floor_number}}</p>
+
+                                                <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
+
+                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full 
+                                                </p>
+
+                                                    <form method = "POST" action = "/submit4">
+                                                    {% csrf_token %}
+                                                    <input type = "range" name = "numRange4" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
+
+                                                        <span id = "range"> 50% </span>
+                                                        <div class="submit">
+                                                        <button type = "submit">Submit
+                                                        </button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                {% endif %}
+
+                                        {% endif %}
+                                        {% endfor %}
+                </div>
+
+                    {% elif library.dayofweek == 'Thursday' %}
+                        <h2 class="library_name">Marston Science Library</h2>
+                        <div class="operation">
+                        <h3>Hours of Operation</h3>
+                        <h3 class="hours">{{library.hours}}</h3>
+                        </>
+                        <div class="floor">
+                               {% for floor in floors %}
+                                        {% if floor.libname == 'Marston Science Library' %}
+                                            {% if floor.floor_number == 1 %}
+                                            <div class="floor_indiv">
+                                                
+                                                <p class="floor_number">Floor {{ floor.floor_number}}</p>
+
+                                                 <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
+
+                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full  
+                                                </p>
+                                                    
+                                                    <form method = "POST" action = "/submit">
+                                                    {% csrf_token %}
+                                                    <input type = "range" name = "numRange" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
+
+                                                        <span id = "range"> 50% </span>
+                                                       <div class="submit">
+                                                        <button type = "submit" name = "save">Submit
+                                                        </button>
+                                                    
+                                                    </div>
+                                                    </form>
+                                                </div>
+                                            {% elif floor.floor_number == 2 %}
+                                            <div class="floor_indiv">
+                                                <p class="floor_number">Floor {{ floor.floor_number}}</p>
+
+                                                <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
+
+                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full 
+                                                </p>
+
+                                                    <form method = "POST" action = "/submit">
+                                                    {% csrf_token %}
+                                                    <input type = "range" name = "numRange1" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
+
+                                                        <span id = "range"> 50% </span>
+                                                        <div class="submit">
+                                                        <button type = "submit" name = >Submit
+                                                        </button>
+                                                    </div>
+                                                    </form>
+                                                </div>
+
+                                            {% elif floor.floor_number == 3 %}
+                                            <div class="floor_indiv">
+                                                <p class="floor_number">Floor {{ floor.floor_number}}</p>
+
+                                                <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
+
+                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full   
+                                                </p>
+
+                                                    <form method = "POST" action = "/submit2">
+                                                    {% csrf_token %}
+                                                    <input type = "range" name = "numRange2" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
+
+                                                        <span id = "range"> 50% </span>
+                                                        <div class="submit">
+                                                        <button type = "submit">Submit
+                                                        </button>
+                                                    </div>
+                                                    </form>
+                                                </div>
+
+                                            {% elif floor.floor_number == 4 %}
+                                            <div class="floor_indiv">
+                                                <p class="floor_number">Floor {{ floor.floor_number}}</p>
+
+                                                <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
+
+                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full  
+                                                </p>
+
+                                                    <form method = "POST" action = "/submit3">
+                                                    {% csrf_token %}
+                                                    <input type = "range" name = "numRange3" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
+
+                                                        <span id = "range"> 50% </span>
+                                                        <div class="submit">
+                                                        <button type = "submit">Submit
+                                                        </button>
+                                                    </div>
+                                                    </form>
+                                                </div>
+                                            {% elif floor.floor_number == 5 %}
+                                            <div class="floor_indiv">
+                                                <p class="floor_number">Floor {{ floor.floor_number}}</p>
+
+                                                <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
+
+                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full 
+                                                </p>
+
+                                                    <form method = "POST" action = "/submit4">
+                                                    {% csrf_token %}
+                                                    <input type = "range" name = "numRange4" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
+
+                                                        <span id = "range"> 50% </span>
+                                                        <div class="submit">
+                                                        <button type = "submit">Submit
+                                                        </button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                {% endif %}
+
+                                        {% endif %}
+                                        {% endfor %}
                     {% endif %}
+                </div>
+                {% elif library.title == 'Marston Science Library (Fri)' %}
+                    {% if library.dayofweek == 'Friday' %}
+                        <h2 class="library_name">Marston Science Library</h2>
+                        <div class="operation">
+                        <h3>Hours of Operation</h3>
+                        <h3 class="hours">{{library.hours}}</h3>
+                        </>
+                        <div class="floor">
+                               {% for floor in floors %}
+                                        {% if floor.libname == 'Marston Science Library' %}
+                                            {% if floor.floor_number == 1 %}
+                                            <div class="floor_indiv">
+                                                
+                                                <p class="floor_number">Floor {{ floor.floor_number}}</p>
+
+                                                 <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
+
+                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full  
+                                                </p>
+                                                    
+                                                    <form method = "POST" action = "/submit">
+                                                    {% csrf_token %}
+                                                    <input type = "range" name = "numRange" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
+
+                                                        <span id = "range"> 50% </span>
+                                                       <div class="submit">
+                                                        <button type = "submit" name = "save">Submit
+                                                        </button>
+                                                    
+                                                    </div>
+                                                    </form>
+                                                </div>
+                                            {% elif floor.floor_number == 2 %}
+                                            <div class="floor_indiv">
+                                                <p class="floor_number">Floor {{ floor.floor_number}}</p>
+
+                                                <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
+
+                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full 
+                                                </p>
+
+                                                    <form method = "POST" action = "/submit">
+                                                    {% csrf_token %}
+                                                    <input type = "range" name = "numRange1" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
+
+                                                        <span id = "range"> 50% </span>
+                                                        <div class="submit">
+                                                        <button type = "submit" name = >Submit
+                                                        </button>
+                                                    </div>
+                                                    </form>
+                                                </div>
+
+                                            {% elif floor.floor_number == 3 %}
+                                            <div class="floor_indiv">
+                                                <p class="floor_number">Floor {{ floor.floor_number}}</p>
+
+                                                <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
+
+                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full   
+                                                </p>
+
+                                                    <form method = "POST" action = "/submit2">
+                                                    {% csrf_token %}
+                                                    <input type = "range" name = "numRange2" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
+
+                                                        <span id = "range"> 50% </span>
+                                                        <div class="submit">
+                                                        <button type = "submit">Submit
+                                                        </button>
+                                                    </div>
+                                                    </form>
+                                                </div>
+
+                                            {% elif floor.floor_number == 4 %}
+                                            <div class="floor_indiv">
+                                                <p class="floor_number">Floor {{ floor.floor_number}}</p>
+
+                                                <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
+
+                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full  
+                                                </p>
+
+                                                    <form method = "POST" action = "/submit3">
+                                                    {% csrf_token %}
+                                                    <input type = "range" name = "numRange3" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
+
+                                                        <span id = "range"> 50% </span>
+                                                        <div class="submit">
+                                                        <button type = "submit">Submit
+                                                        </button>
+                                                    </div>
+                                                    </form>
+                                                </div>
+                                            {% elif floor.floor_number == 5 %}
+                                            <div class="floor_indiv">
+                                                <p class="floor_number">Floor {{ floor.floor_number}}</p>
+
+                                                <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
+
+                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full 
+                                                </p>
+
+                                                    <form method = "POST" action = "/submit4">
+                                                    {% csrf_token %}
+                                                    <input type = "range" name = "numRange4" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
+
+                                                        <span id = "range"> 50% </span>
+                                                        <div class="submit">
+                                                        <button type = "submit">Submit
+                                                        </button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                {% endif %}
+
+                                        {% endif %}
+                                        {% endfor %}
+                    {% endif %}
+                </div>
 
                 {% elif library.title == 'Marston Science Library (Sat)' %}
                     {% if library.dayofweek == 'Saturday' %}
-                        <h2><p> Marston Science Library </p></h2>
-                        <p> {{library.hours}} </p>
-
- {% for floor in floors %}
+                        <h2 class="library_name">Marston Science Library</h2>
+                        <div class="operation">
+                        <h3>Hours of Operation</h3>
+                        <h3 class="hours">{{library.hours}}</h3>
+                        </>
+                        <div class="floor">
+                               {% for floor in floors %}
                                         {% if floor.libname == 'Marston Science Library' %}
                                             {% if floor.floor_number == 1 %}
-                                                <p>Floor {{ floor.floor_number}}</p>
+                                            <div class="floor_indiv">
+                                                
+                                                <p class="floor_number">Floor {{ floor.floor_number}}</p>
 
-                                                <p>Current Capacity: {{ floor.current_capacity }} </p>
+                                                 <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Rated Capacity:  {{ floor.rated_capacity }}  
+                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full  
                                                 </p>
-
+                                                    
                                                     <form method = "POST" action = "/submit">
                                                     {% csrf_token %}
                                                     <input type = "range" name = "numRange" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
 
                                                         <span id = "range"> 50% </span>
-
-                                                        <button type = "submit">Submit
+                                                       <div class="submit">
+                                                        <button type = "submit" name = "save">Submit
                                                         </button>
+                                                    
+                                                    </div>
                                                     </form>
-
+                                                </div>
                                             {% elif floor.floor_number == 2 %}
+                                            <div class="floor_indiv">
+                                                <p class="floor_number">Floor {{ floor.floor_number}}</p>
 
-                                                <p>Floor {{ floor.floor_number}}</p>
+                                                <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Current Capacity: {{ floor.current_capacity }} </p>
-
-                                                <p>Rated Capacity:  {{ floor.rated_capacity }}   
+                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full 
                                                 </p>
 
-                                                    <form method = "POST" action = "/submit1">
+                                                    <form method = "POST" action = "/submit">
                                                     {% csrf_token %}
                                                     <input type = "range" name = "numRange1" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
 
                                                         <span id = "range"> 50% </span>
-
-                                                        <button type = "submit">Submit
+                                                        <div class="submit">
+                                                        <button type = "submit" name = >Submit
                                                         </button>
+                                                    </div>
                                                     </form>
-
+                                                </div>
 
                                             {% elif floor.floor_number == 3 %}
+                                            <div class="floor_indiv">
+                                                <p class="floor_number">Floor {{ floor.floor_number}}</p>
 
-                                                <p>Floor {{ floor.floor_number}}</p>
+                                                <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Current Capacity: {{ floor.current_capacity }} </p>
-
-                                                <p>Rated Capacity:  {{ floor.rated_capacity }}  
+                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full   
                                                 </p>
 
                                                     <form method = "POST" action = "/submit2">
@@ -602,19 +682,20 @@
                                                     <input type = "range" name = "numRange2" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
 
                                                         <span id = "range"> 50% </span>
-
+                                                        <div class="submit">
                                                         <button type = "submit">Submit
                                                         </button>
+                                                    </div>
                                                     </form>
-
+                                                </div>
 
                                             {% elif floor.floor_number == 4 %}
+                                            <div class="floor_indiv">
+                                                <p class="floor_number">Floor {{ floor.floor_number}}</p>
 
-                                                <p>Floor {{ floor.floor_number}}</p>
+                                                <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Current Capacity: {{ floor.current_capacity }} </p>
-
-                                                <p>Rated Capacity:  {{ floor.rated_capacity }}  
+                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full  
                                                 </p>
 
                                                     <form method = "POST" action = "/submit3">
@@ -622,18 +703,19 @@
                                                     <input type = "range" name = "numRange3" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
 
                                                         <span id = "range"> 50% </span>
-
+                                                        <div class="submit">
                                                         <button type = "submit">Submit
                                                         </button>
+                                                    </div>
                                                     </form>
-
+                                                </div>
                                             {% elif floor.floor_number == 5 %}
+                                            <div class="floor_indiv">
+                                                <p class="floor_number">Floor {{ floor.floor_number}}</p>
 
-                                                <p>Floor {{ floor.floor_number}}</p>
+                                                <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Current Capacity: {{ floor.current_capacity }} </p>
-
-                                                <p>Rated Capacity:  {{ floor.rated_capacity }}  
+                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full 
                                                 </p>
 
                                                     <form method = "POST" action = "/submit4">
@@ -641,69 +723,79 @@
                                                     <input type = "range" name = "numRange4" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
 
                                                         <span id = "range"> 50% </span>
-
+                                                        <div class="submit">
                                                         <button type = "submit">Submit
                                                         </button>
+                                                        </div>
                                                     </form>
+                                                </div>
                                                 {% endif %}
 
                                         {% endif %}
                                         {% endfor %}
-
                     {% endif %}
+                </div>
 
                 {% elif library.title == 'Marston Science Library (Sun)' %}
                     {% if library.dayofweek == 'Sunday' %}
-                        <h2><p> Marston Science Library </p></h2>
-                        <p> {{library.hours}} </p>
-
-                                                              {% for floor in floors %}
+                       <h2 class="library_name">Marston Science Library</h2>
+                        <div class="operation">
+                        <h3>Hours of Operation</h3>
+                        <h3 class="hours">{{library.hours}}</h3>
+                        </>
+                        <div class="floor">
+                               {% for floor in floors %}
                                         {% if floor.libname == 'Marston Science Library' %}
                                             {% if floor.floor_number == 1 %}
-                                                <p>Floor floor.floor_number</p>
+                                            <div class="floor_indiv">
+                                                
+                                                <p class="floor_number">Floor {{ floor.floor_number}}</p>
 
-                                                <p>Current Capacity: {{ floor.current_capacity }} </p>
+                                                 <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Rated Capacity:  {{ floor.rated_capacity }}   
+                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full  
                                                 </p>
-
+                                                    
                                                     <form method = "POST" action = "/submit">
                                                     {% csrf_token %}
                                                     <input type = "range" name = "numRange" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
 
                                                         <span id = "range"> 50% </span>
-
-                                                        <button type = "submit">Submit
+                                                       <div class="submit">
+                                                        <button type = "submit" name = "save">Submit
                                                         </button>
+                                                    
+                                                    </div>
                                                     </form>
-
+                                                </div>
                                             {% elif floor.floor_number == 2 %}
+                                            <div class="floor_indiv">
+                                                <p class="floor_number">Floor {{ floor.floor_number}}</p>
 
-                                                <p>Floor floor.floor_number</p>
+                                                <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Current Capacity: {{ floor.current_capacity }} </p>
-
-                                                <p>Rated Capacity:  {{ floor.rated_capacity }}   
+                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full 
                                                 </p>
 
-                                                    <form method = "POST" action = "/submit1">
+                                                    <form method = "POST" action = "/submit">
                                                     {% csrf_token %}
                                                     <input type = "range" name = "numRange1" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
 
                                                         <span id = "range"> 50% </span>
-
-                                                        <button type = "submit">Submit
+                                                        <div class="submit">
+                                                        <button type = "submit" name = >Submit
                                                         </button>
+                                                    </div>
                                                     </form>
-
+                                                </div>
 
                                             {% elif floor.floor_number == 3 %}
+                                            <div class="floor_indiv">
+                                                <p class="floor_number">Floor {{ floor.floor_number}}</p>
 
-                                                <p>Floor floor.floor_number</p>
+                                                <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Current Capacity: {{ floor.current_capacity }} </p>
-
-                                                <p>Rated Capacity:  {{ floor.rated_capacity }}  
+                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full   
                                                 </p>
 
                                                     <form method = "POST" action = "/submit2">
@@ -711,19 +803,20 @@
                                                     <input type = "range" name = "numRange2" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
 
                                                         <span id = "range"> 50% </span>
-
+                                                        <div class="submit">
                                                         <button type = "submit">Submit
                                                         </button>
+                                                    </div>
                                                     </form>
-
+                                                </div>
 
                                             {% elif floor.floor_number == 4 %}
+                                            <div class="floor_indiv">
+                                                <p class="floor_number">Floor {{ floor.floor_number}}</p>
 
-                                                <p>Floor floor.floor_number</p>
+                                                <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Current Capacity: {{ floor.current_capacity }} </p>
-
-                                                <p>Rated Capacity:  {{ floor.rated_capacity }}  
+                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full  
                                                 </p>
 
                                                     <form method = "POST" action = "/submit3">
@@ -731,18 +824,19 @@
                                                     <input type = "range" name = "numRange3" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
 
                                                         <span id = "range"> 50% </span>
-
+                                                        <div class="submit">
                                                         <button type = "submit">Submit
                                                         </button>
+                                                    </div>
                                                     </form>
-
+                                                </div>
                                             {% elif floor.floor_number == 5 %}
+                                            <div class="floor_indiv">
+                                                <p class="floor_number">Floor {{ floor.floor_number}}</p>
 
-                                                <p>Floor floor.floor_number</p>
+                                                <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Current Capacity: {{ floor.current_capacity }} </p>
-
-                                                <p>Rated Capacity:  {{ floor.rated_capacity }}   
+                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full 
                                                 </p>
 
                                                     <form method = "POST" action = "/submit4">
@@ -750,127 +844,142 @@
                                                     <input type = "range" name = "numRange4" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
 
                                                         <span id = "range"> 50% </span>
-
+                                                        <div class="submit">
                                                         <button type = "submit">Submit
                                                         </button>
+                                                        </div>
                                                     </form>
+                                                </div>
                                                 {% endif %}
 
                                         {% endif %}
                                         {% endfor %}
-
-
-
                     {% endif %}
+                </div>
                     
                 {% elif library.title == 'Library West' %}
-                    <h2><p>{{library.title}}</p></h2>
-                    <p> {{library.hours}} </p>
+                    <h2 class="library_name">{{library.title}}</h2>
+                    <div class="operation">
+                        <h3>Hours of Operation</h3>
+                        <h3 class="hours">{{library.hours}}</h3>
+                        </>
+                        <div class="floor">
 
                                {% for floor in floors %}
                                         {% if floor.libname == 'Library West' %}
                                             {% if floor.floor_number == 1 %}
-                                                <p>Floor {{floor.floor_number}}</p>
+                                                <div class="floor_indiv">
+                                                
+                                                <p class="floor_number">Floor {{ floor.floor_number}}</p>
 
-                                                <p>Current Capacity: {{ floor.current_capacity }} </p>
+                                                 <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Rated Capacity:  {{ floor.rated_capacity }}   
+                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full  
                                                 </p>
-
-                                                    <form method = "POST" action = "/submit5">
+                                                    
+                                                    <form method = "POST" action = "/submit">
                                                     {% csrf_token %}
-                                                    <input type = "range" name = "numRange5" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
+                                                    <input type = "range" name = "numRange" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
 
                                                         <span id = "range"> 50% </span>
-
-                                                        <button type = "submit">Submit
+                                                       <div class="submit">
+                                                        <button type = "submit" name = "save">Submit
                                                         </button>
+                                                    
+                                                    </div>
                                                     </form>
-
+                                                </div>
                                             {% elif floor.floor_number == 2 %}
+                                            <div class="floor_indiv">
+                                                <p class="floor_number">Floor {{ floor.floor_number}}</p>
 
-                                                <p>Floor {{floor.floor_number}}</p>
+                                                <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Current Capacity: {{ floor.current_capacity }} </p>
-
-                                                <p>Rated Capacity:  {{ floor.rated_capacity }}  
+                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full 
                                                 </p>
 
-                                                    <form method = "POST" action = "/submit6">
+                                                    <form method = "POST" action = "/submit">
                                                     {% csrf_token %}
-                                                    <input type = "range" name = "numRange6" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
+                                                    <input type = "range" name = "numRange1" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
 
                                                         <span id = "range"> 50% </span>
-
-                                                        <button type = "submit">Submit
+                                                        <div class="submit">
+                                                        <button type = "submit" name = >Submit
                                                         </button>
+                                                    </div>
                                                     </form>
-
+                                                </div>
 
                                             {% elif floor.floor_number == 3 %}
+                                            <div class="floor_indiv">
+                                                <p class="floor_number">Floor {{ floor.floor_number}}</p>
 
-                                                <p>Floor {{floor.floor_number}}</p>
+                                                <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Current Capacity: {{ floor.current_capacity }} </p>
-
-                                                <p>Rated Capacity:  {{ floor.rated_capacity }}  
+                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full   
                                                 </p>
 
-                                                    <form method = "POST" action = "/submit7">
+                                                    <form method = "POST" action = "/submit2">
                                                     {% csrf_token %}
-                                                    <input type = "range" name = "numRange7" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
+                                                    <input type = "range" name = "numRange2" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
 
                                                         <span id = "range"> 50% </span>
-
+                                                        <div class="submit">
                                                         <button type = "submit">Submit
                                                         </button>
+                                                    </div>
                                                     </form>
-
+                                                </div>
 
                                             {% elif floor.floor_number == 4 %}
+                                            <div class="floor_indiv">
+                                                <p class="floor_number">Floor {{ floor.floor_number}}</p>
 
-                                                <p>Floor {{floor.floor_number}}</p>
+                                                <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Current Capacity: {{ floor.current_capacity }} </p>
-
-                                                <p>Rated Capacity:  {{ floor.rated_capacity }} 
+                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full  
                                                 </p>
 
-                                                    <form method = "POST" action = "/submit8">
+                                                    <form method = "POST" action = "/submit3">
                                                     {% csrf_token %}
-                                                    <input type = "range" name = "numRange8" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
+                                                    <input type = "range" name = "numRange3" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
 
                                                         <span id = "range"> 50% </span>
-
+                                                        <div class="submit">
                                                         <button type = "submit">Submit
                                                         </button>
+                                                    </div>
                                                     </form>
+                                                </div>
 
                                             {% elif floor.floor_number == 5 %}
-
-                                                <p>Floor {{floor.floor_number}}</p>
+                                                <div class="floor_indiv">
+                                                <p class="floor_number">Floor {{ floor.floor_number}}</p>
 
                                                 <p>This floor is staff only.</p>
 
 
                                             {% elif floor.floor_number == 6 %}
 
-                                                <p>Floor {{floor.floor_number}}</p>
+                                                <div class="floor_indiv">
+                                                <p class="floor_number">Floor {{ floor.floor_number}}</p>
 
-                                                <p>Current Capacity: {{ floor.current_capacity }} </p>
+                                                <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Rated Capacity:  {{ floor.rated_capacity }}   
+                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full  
                                                 </p>
 
-                                                    <form method = "POST" action = "/submit9">
+                                                    <form method = "POST" action = "/submit3">
                                                     {% csrf_token %}
-                                                    <input type = "range" name = "numRange9" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
+                                                    <input type = "range" name = "numRange3" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
 
                                                         <span id = "range"> 50% </span>
-
+                                                        <div class="submit">
                                                         <button type = "submit">Submit
                                                         </button>
+                                                    </div>
                                                     </form>
+                                                </div>
                                             {% endif %}
 
                                         {% endif %}
@@ -878,9 +987,9 @@
 
 
                 {% endif %}
-    	</div>
+    	
     {% endfor %}
-
+</div>
     	<div>
     		<h2>
     		<a href="https://ufl.evanced.info/dibs">
@@ -888,5 +997,12 @@
 			</a>
     		</h2>
        	</div>
+        </div>
     </body>
+    <script>
+        function showValue(newValue)
+        {
+            document.getElementById("range").innerHTML=newValue + "%";
+        }
+    </script>
 </html>
