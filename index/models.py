@@ -31,14 +31,15 @@ class Library(models.Model):
 class Floor(models.Model):
     libname = models.CharField(max_length=200, default='')
     floor_number = models.IntegerField(default=1, blank=True, null=True)
+    total_capacity = models.IntegerField(default=0, blank=True, null=True)
     current_capacity = models.IntegerField(default=0, blank=True, null=True)
     rated_capacity = models.IntegerField(default=0, blank=True, null=True)
+    num_ratings = models.IntegerField(default = 0, blank=True,null=True)
 
     def changethecapacity(self, rate):
-        self.current_capacity = int(int(self.current_capacity) + int(rate)) / 2
-        if self.current_capacity > 100:
-            self.current_capacity = int(100)
-            
+        self.num_ratings = self.num_ratings + 1
+        self.total_capacity = float(float(self.total_capacity) + float(self.rated_capacity))
+        self.current_capacity = self.total_capacity / self.num_ratings
         self.save()
 
     def changerating(self, rate):
