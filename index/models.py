@@ -34,35 +34,13 @@ class Floor(models.Model):
     current_capacity = models.IntegerField(default=0, blank=True, null=True)
     rated_capacity = models.IntegerField(default=0, blank=True, null=True)
 
-    def changethecapacity(self):
-        self.current_capacity = (self.current_capacity + self.rated_capacity) / 2
+    def changethecapacity(self, rate):
+        self.current_capacity = int(int(self.current_capacity) + int(rate)) / 2
         if self.current_capacity > 100:
-            self.current_capacity = 100
+            self.current_capacity = int(100)
+            
         self.save()
-        return self.current_capacity
 
-    def changerating0(self):
-        self.rated_capacity = 0
+    def changerating(self, rate):
+        self.rated_capacity = rate
         self.save()
-        return self.rated_capacity
-
-    def changerating25(self):
-        self.rated_capacity = 25
-        self.save()
-        return self.rated_capacity
-
-    def changerating50(self):
-        self.rated_capacity = 50
-        self.save()
-        return self.rated_capacity
-
-    def changerating75(self):
-        self.rated_capacity = 75
-        self.save()
-        return self.rated_capacity
-
-
-    def changerating100(self):
-        self.rated_capacity = 100
-        self.save()
-        return self.rated_capacity
