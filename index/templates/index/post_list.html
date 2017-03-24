@@ -20,7 +20,7 @@
                         <div class="operation">
                         <h3>Hours of Operation</h3>
                         <h3 class="hours">{{library.hours}}</h3>
-                        </>
+                        </div>
                         <div class="floor">
                                {% for floor in floors %}
                                         {% if floor.libname == 'Marston Science Library' %}
@@ -140,7 +140,7 @@
                         <div class="operation">
                         <h3>Hours of Operation</h3>
                         <h3 class="hours">{{library.hours}}</h3>
-                        </>
+                        </div>
                         <div class="floor">
                                {% for floor in floors %}
                                         {% if floor.libname == 'Marston Science Library' %}
@@ -261,7 +261,7 @@
                         <div class="operation">
                         <h3>Hours of Operation</h3>
                         <h3 class="hours">{{library.hours}}</h3>
-                        </>
+                        </div>
                         <div class="floor">
                                {% for floor in floors %}
                                         {% if floor.libname == 'Marston Science Library' %}
@@ -380,7 +380,7 @@
                         <div class="operation">
                         <h3>Hours of Operation</h3>
                         <h3 class="hours">{{library.hours}}</h3>
-                        </>
+                        </div>
                         <div class="floor">
                                {% for floor in floors %}
                                         {% if floor.libname == 'Marston Science Library' %}
@@ -500,7 +500,7 @@
                         <div class="operation">
                         <h3>Hours of Operation</h3>
                         <h3 class="hours">{{library.hours}}</h3>
-                        </>
+                        </div>
                         <div class="floor">
                                {% for floor in floors %}
                                         {% if floor.libname == 'Marston Science Library' %}
@@ -621,7 +621,7 @@
                         <div class="operation">
                         <h3>Hours of Operation</h3>
                         <h3 class="hours">{{library.hours}}</h3>
-                        </>
+                        </div>
                         <div class="floor">
                                {% for floor in floors %}
                                         {% if floor.libname == 'Marston Science Library' %}
@@ -742,7 +742,7 @@
                         <div class="operation">
                         <h3>Hours of Operation</h3>
                         <h3 class="hours">{{library.hours}}</h3>
-                        </>
+                        </div>
                         <div class="floor">
                                {% for floor in floors %}
                                         {% if floor.libname == 'Marston Science Library' %}
@@ -862,7 +862,7 @@
                     <div class="operation">
                         <h3>Hours of Operation</h3>
                         <h3 class="hours">{{library.hours}}</h3>
-                        </>
+                        </div>
                         <div class="floor">
 
                                {% for floor in floors %}
@@ -879,7 +879,7 @@
                                                     
                                                     <form method = "POST" action = "/submit">
                                                     {% csrf_token %}
-                                                    <input type = "range" name = "numRange" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
+                                                    <input type = "range" class="myRange" name = "numRange" id = "weight" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this)">
 
                                                         <span id = "range"> 50% </span>
                                                        <div class="submit">
@@ -900,7 +900,7 @@
 
                                                     <form method = "POST" action = "/submit">
                                                     {% csrf_token %}
-                                                    <input type = "range" name = "numRange1" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
+                                                    <input type = "range" name = "numRange1" id = "weight1" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this)">
 
                                                         <span id = "range"> 50% </span>
                                                         <div class="submit">
@@ -921,7 +921,7 @@
 
                                                     <form method = "POST" action = "/submit2">
                                                     {% csrf_token %}
-                                                    <input type = "range" name = "numRange2" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
+                                                    <input type = "range" name = "numRange2" id = "weight3" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this)">
 
                                                         <span id = "range"> 50% </span>
                                                         <div class="submit">
@@ -942,7 +942,7 @@
 
                                                     <form method = "POST" action = "/submit3">
                                                     {% csrf_token %}
-                                                    <input type = "range" name = "numRange3" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
+                                                    <input type = "range" name = "numRange5" id = "weight4" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this)">
 
                                                         <span id = "range"> 50% </span>
                                                         <div class="submit">
@@ -957,7 +957,7 @@
                                                 <p class="floor_number">Floor {{ floor.floor_number}}</p>
 
                                                 <p>This floor is staff only.</p>
-
+                                            </div>
 
                                             {% elif floor.floor_number == 6 %}
 
@@ -971,7 +971,7 @@
 
                                                     <form method = "POST" action = "/submit3">
                                                     {% csrf_token %}
-                                                    <input type = "range" name = "numRange3" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this.value)">
+                                                    <input type = "range" name = "numRange6" id = "weight6" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this)">
 
                                                         <span id = "range"> 50% </span>
                                                         <div class="submit">
@@ -1000,9 +1000,18 @@
         </div>
     </body>
     <script>
-        function showValue(newValue)
-        {
-            document.getElementById("range").innerHTML=newValue + "%";
-        }
+        function get_nextsibling(n)
+     {
+     x=n.nextSibling;
+     while (x.nodeType!=1)
+       {
+       x=x.nextSibling;
+       }
+     return x;
+     }
+    function showValue(self)
+    {
+     get_nextsibling(self).innerHTML=self.value + "%";
+    }
     </script>
 </html>
