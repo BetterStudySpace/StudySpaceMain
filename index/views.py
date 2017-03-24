@@ -17,28 +17,28 @@ def submit(request):
 		libraries = Library.objects.all()
 		floors = Floor.objects.all().order_by('floor_number')
 		if request.method == 'POST':	
-			if request.POST.get("numRange"):
-				curr_ratings = request.POST.get('numRange')
+			if request.POST.get("num"):
+				curr_ratings = request.POST.get('num')
 				f = Floor.objects.get(libname = "Marston Science Library", floor_number = 1)
 				f.changerating(rate = curr_ratings)
 				f.changethecapacity(rate = curr_ratings)
-			elif request.POST.get("numRange1"):
-				curr_ratings = request.POST.get('numRange1')
+			elif request.POST.get("num1"):
+				curr_ratings = request.POST.get('num1')
 				f = Floor.objects.get(libname = "Marston Science Library", floor_number = 2)
 				f.changerating(rate = curr_ratings)
 				f.changethecapacity(rate = curr_ratings)
-			elif request.POST.get("numRange2"):
-				curr_ratings = request.POST.get('numRange2')
+			elif request.POST.get("num2"):
+				curr_ratings = request.POST.get('num2')
 				f = Floor.objects.get(libname = "Marston Science Library", floor_number = 3)
 				f.changerating(rate = curr_ratings)
 				f.changethecapacity(rate = curr_ratings)
-			elif request.POST.get("numRange3"):
-				curr_ratings = request.POST.get('numRange3')
+			elif request.POST.get("num3"):
+				curr_ratings = request.POST.get('num3')
 				f = Floor.objects.get(libname = "Marston Science Library", floor_number = 4)
 				f.changerating(rate = curr_ratings)
 				f.changethecapacity(rate = curr_ratings)
-			elif request.POST.get("numRange4"):
-				curr_ratings = request.POST.get('numRange4')
+			elif request.POST.get("num4"):
+				curr_ratings = request.POST.get('num4')
 				f = Floor.objects.get(libname = "Marston Science Library", floor_number = 5)
 				f.changerating(rate = curr_ratings)
 				f.changethecapacity(rate = curr_ratings)
