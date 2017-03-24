@@ -69,7 +69,77 @@ body{
 }
 
 
-#myrange{
+#weight{
+        width: 200px;
+       }
+       input[type=range] {
+    /*removes default webkit styles*/
+    -webkit-appearance: none;
+    
+    /*fix for FF unable to apply focus style bug */
+    border: 1px solid white;
+    
+    /*required for proper track sizing in FF*/
+    width: 300px;
+    padding: 10px;
+}
+#weight1{
+        width: 200px;
+       }
+       input[type=range] {
+    /*removes default webkit styles*/
+    -webkit-appearance: none;
+    
+    /*fix for FF unable to apply focus style bug */
+    border: 1px solid white;
+    
+    /*required for proper track sizing in FF*/
+    width: 300px;
+    padding: 10px;
+}
+#weight2{
+        width: 200px;
+       }
+       input[type=range] {
+    /*removes default webkit styles*/
+    -webkit-appearance: none;
+    
+    /*fix for FF unable to apply focus style bug */
+    border: 1px solid white;
+    
+    /*required for proper track sizing in FF*/
+    width: 300px;
+    padding: 10px;
+}
+#weight3{
+        width: 200px;
+       }
+       input[type=range] {
+    /*removes default webkit styles*/
+    -webkit-appearance: none;
+    
+    /*fix for FF unable to apply focus style bug */
+    border: 1px solid white;
+    
+    /*required for proper track sizing in FF*/
+    width: 300px;
+    padding: 10px;
+}
+#weight4{
+        width: 200px;
+       }
+       input[type=range] {
+    /*removes default webkit styles*/
+    -webkit-appearance: none;
+    
+    /*fix for FF unable to apply focus style bug */
+    border: 1px solid white;
+    
+    /*required for proper track sizing in FF*/
+    width: 300px;
+    padding: 10px;
+}
+#weight6{
         width: 200px;
        }
        input[type=range] {
