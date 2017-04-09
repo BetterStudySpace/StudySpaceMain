@@ -34,12 +34,19 @@ class Floor(models.Model):
     total_capacity = models.IntegerField(default=0, blank=True, null=True)
     current_capacity = models.IntegerField(default=0, blank=True, null=True)
     rated_capacity = models.IntegerField(default=0, blank=True, null=True)
+    rated_capacity2 = models.IntegerField(default=0, blank=True, null=True)
+    rated_capacity3 = models.IntegerField(default=0, blank=True, null=True)
     num_ratings = models.IntegerField(default = 0, blank=True,null=True)
 
     def changethecapacity(self, rate):
         self.num_ratings = self.num_ratings + 1
-        self.total_capacity = float(float(self.total_capacity) + float(self.rated_capacity))
+        if self.num_ratings > 3:
+            self.num_ratings = 3
+        self.total_capacity = float(self.rated_capacity) + float(self.rated_capacity2) + float(self.rated_capacity3)
         self.current_capacity = self.total_capacity / self.num_ratings
+        self.rated_capacity3 = self.rated_capacity2
+        self.rated_capacity2 = self.rated_capacity
+        self.rated_capacity = 0
         self.save()
 
     def changerating(self, rate):

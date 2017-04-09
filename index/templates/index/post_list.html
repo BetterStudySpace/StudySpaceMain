@@ -16,7 +16,7 @@
     	<div class="libraries">
                 {% if library.title == 'Marston Science Library (Mon-Thurs)' %}
                     {% if library.dayofweek == 'Monday' %}
-<h2 class="library_name">Marston Science Library</h2>
+                    <h2 class="library_name">Marston Science Library</h2>
                         <div class="operation">
                         <h3>Hours of Operation</h3>
                         <h3 class="hours">{{library.hours}}</h3>
@@ -31,14 +31,11 @@
 
                                                  <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full  
-                                                </p>
-                                                    
                                                     <form method = "POST" action = "/submit">
                                                     {% csrf_token %}
-                                                    <input type = "range" name = "num" id = "w" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this)">
+                                                    <input type = "range" name = "num" id = "w" value = "0" min = "0" max = "100" step = "25" onchange = "showValue(this)">
 
-                                                        <span id = "range"> 50% </span>
+                                                       <p> Your Rating: <span id = "range"> 0% </span> Full </p>
                                                        <div class="submit">
                                                         <button type = "submit" name = "save">Submit
                                                         </button>
@@ -52,19 +49,15 @@
 
                                                 <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full 
-                                                </p>
 
                                                     <form method = "POST" action = "/submit">
                                                     {% csrf_token %}
-                                                    <input type = "range" name = "num1" id = "w1" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this)">
+                                                    <input type = "range" name = "num1" id = "w1" value = "0" min = "0" max = "100" step = "25" onchange = "showValue(this)">
 
-                                                        <span id = "range"> 50% </span>
-                                                        <div class="submit">
-                                                        <button type = "submit" name = >Submit
+                                                       <p> Your Rating: <span id = "range"> 0% </span> Full </p>
+                                                       <div class="submit">
+                                                        <button type = "submit" name = "save">Submit
                                                         </button>
-                                                    </div>
-                                                    </form>
                                                 </div>
 
                                             {% elif floor.floor_number == 3 %}
@@ -73,16 +66,14 @@
 
                                                 <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full   
-                                                </p>
 
-                                                    <form method = "POST" action = "/submit2">
+                                                     <form method = "POST" action = "/submit">
                                                     {% csrf_token %}
-                                                    <input type = "range" name = "num2" id = "w2" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this)">
+                                                    <input type = "range" name = "num2" id = "w2" value = "0" min = "0" max = "100" step = "25" onchange = "showValue(this)">
 
-                                                        <span id = "range"> 50% </span>
-                                                        <div class="submit">
-                                                        <button type = "submit">Submit
+                                                       <p> Your Rating: <span id = "range"> 0% </span> Full </p>
+                                                       <div class="submit">
+                                                        <button type = "submit" name = "save">Submit
                                                         </button>
                                                     </div>
                                                     </form>
@@ -93,17 +84,15 @@
                                                 <p class="floor_number">Floor {{ floor.floor_number}}</p>
 
                                                 <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
+                                      
 
-                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full  
-                                                </p>
-
-                                                    <form method = "POST" action = "/submit3">
+                                                     <form method = "POST" action = "/submit">
                                                     {% csrf_token %}
-                                                    <input type = "range" name = "num3" id = "w3" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this)">
+                                                    <input type = "range" name = "num3" id = "w3" value = "0" min = "0" max = "100" step = "25" onchange = "showValue(this)">
 
-                                                        <span id = "range"> 50% </span>
-                                                        <div class="submit">
-                                                        <button type = "submit">Submit
+                                                       <p> Your Rating: <span id = "range"> 0% </span> Full </p>
+                                                       <div class="submit">
+                                                        <button type = "submit" name = "save">Submit
                                                         </button>
                                                     </div>
                                                     </form>
@@ -114,16 +103,14 @@
 
                                                 <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full 
-                                                </p>
 
-                                                    <form method = "POST" action = "/submit4">
+                                                     <form method = "POST" action = "/submit">
                                                     {% csrf_token %}
-                                                    <input type = "range" name = "num4" id = "w4" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this)">
+                                                    <input type = "range" name = "num4" id = "w4" value = "0" min = "0" max = "100" step = "25" onchange = "showValue(this)">
 
-                                                        <span id = "range"> 50% </span>
-                                                        <div class="submit">
-                                                        <button type = "submit">Submit
+                                                       <p> Your Rating: <span id = "range"> 0% </span> Full </p>
+                                                       <div class="submit">
+                                                        <button type = "submit" name = "save">Submit
                                                         </button>
                                                         </div>
                                                     </form>
@@ -151,14 +138,12 @@
 
                                                  <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full  
-                                                </p>
                                                     
-                                                    <form method = "POST" action = "/submit">
+                                                     <form method = "POST" action = "/submit">
                                                     {% csrf_token %}
-                                                    <input type = "range" name = "num" id = "w" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this)">
+                                                    <input type = "range" name = "num" id = "w" value = "0" min = "0" max = "100" step = "25" onchange = "showValue(this)">
 
-                                                        <span id = "range"> 50% </span>
+                                                       <p> Your Rating: <span id = "range"> 0% </span> Full </p>
                                                        <div class="submit">
                                                         <button type = "submit" name = "save">Submit
                                                         </button>
@@ -172,16 +157,14 @@
 
                                                 <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full 
-                                                </p>
 
-                                                    <form method = "POST" action = "/submit">
+                                                     <form method = "POST" action = "/submit">
                                                     {% csrf_token %}
-                                                    <input type = "range" name = "num1" id = "w1" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this)">
+                                                    <input type = "range" name = "num1" id = "w1" value = "0" min = "0" max = "100" step = "25" onchange = "showValue(this)">
 
-                                                        <span id = "range"> 50% </span>
-                                                        <div class="submit">
-                                                        <button type = "submit" name = >Submit
+                                                       <p> Your Rating: <span id = "range"> 0% </span> Full </p>
+                                                       <div class="submit">
+                                                        <button type = "submit" name = "save">Submit
                                                         </button>
                                                     </div>
                                                     </form>
@@ -193,16 +176,14 @@
 
                                                 <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full   
-                                                </p>
 
-                                                    <form method = "POST" action = "/submit2">
+                                                     <form method = "POST" action = "/submit">
                                                     {% csrf_token %}
-                                                    <input type = "range" name = "num2" id = "w2" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this)">
+                                                    <input type = "range" name = "num2" id = "w2" value = "0" min = "0" max = "100" step = "25" onchange = "showValue(this)">
 
-                                                        <span id = "range"> 50% </span>
-                                                        <div class="submit">
-                                                        <button type = "submit">Submit
+                                                       <p> Your Rating: <span id = "range"> 0% </span> Full </p>
+                                                       <div class="submit">
+                                                        <button type = "submit" name = "save">Submit
                                                         </button>
                                                     </div>
                                                     </form>
@@ -214,16 +195,14 @@
 
                                                 <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full  
-                                                </p>
 
-                                                    <form method = "POST" action = "/submit3">
+                                                     <form method = "POST" action = "/submit">
                                                     {% csrf_token %}
-                                                    <input type = "range" name = "num3" id = "w3" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this)">
+                                                    <input type = "range" name = "num3" id = "w3" value = "0" min = "0" max = "100" step = "25" onchange = "showValue(this)">
 
-                                                        <span id = "range"> 50% </span>
-                                                        <div class="submit">
-                                                        <button type = "submit">Submit
+                                                       <p> Your Rating: <span id = "range"> 0% </span> Full </p>
+                                                       <div class="submit">
+                                                        <button type = "submit" name = "save">Submit
                                                         </button>
                                                     </div>
                                                     </form>
@@ -234,16 +213,14 @@
 
                                                 <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full 
-                                                </p>
 
-                                                    <form method = "POST" action = "/submit4">
+                                                     <form method = "POST" action = "/submit">
                                                     {% csrf_token %}
-                                                    <input type = "range" name = "num4" id = "w4" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this)">
+                                                    <input type = "range" name = "num4" id = "w4" value = "0" min = "0" max = "100" step = "25" onchange = "showValue(this)">
 
-                                                        <span id = "range"> 50% </span>
-                                                        <div class="submit">
-                                                        <button type = "submit">Submit
+                                                       <p> Your Rating: <span id = "range"> 0% </span> Full </p>
+                                                       <div class="submit">
+                                                        <button type = "submit" name = "save">Submit
                                                         </button>
                                                         </div>
                                                     </form>
@@ -271,15 +248,12 @@
                                                 <p class="floor_number">Floor {{ floor.floor_number}}</p>
 
                                                  <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
-
-                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full  
-                                                </p>
                                                     
-                                                    <form method = "POST" action = "/submit">
+                                                     <form method = "POST" action = "/submit">
                                                     {% csrf_token %}
-                                                    <input type = "range" name = "num" id = "w" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this)">
+                                                    <input type = "range" name = "num" id = "w" value = "0" min = "0" max = "100" step = "25" onchange = "showValue(this)">
 
-                                                        <span id = "range"> 50% </span>
+                                                       <p> Your Rating: <span id = "range"> 0% </span> Full </p>
                                                        <div class="submit">
                                                         <button type = "submit" name = "save">Submit
                                                         </button>
@@ -293,16 +267,14 @@
 
                                                 <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full 
-                                                </p>
 
-                                                    <form method = "POST" action = "/submit">
+                                                     <form method = "POST" action = "/submit">
                                                     {% csrf_token %}
-                                                    <input type = "range" name = "num1" id = "w1" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this)">
+                                                    <input type = "range" name = "num1" id = "w1" value = "0" min = "0" max = "100" step = "25" onchange = "showValue(this)">
 
-                                                        <span id = "range"> 50% </span>
-                                                        <div class="submit">
-                                                        <button type = "submit" name = >Submit
+                                                       <p> Your Rating: <span id = "range"> 0% </span> Full </p>
+                                                       <div class="submit">
+                                                        <button type = "submit" name = "save">Submit
                                                         </button>
                                                     </div>
                                                     </form>
@@ -314,16 +286,14 @@
 
                                                 <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full   
-                                                </p>
 
-                                                    <form method = "POST" action = "/submit2">
+                                                     <form method = "POST" action = "/submit">
                                                     {% csrf_token %}
-                                                    <input type = "range" name = "num2" id = "w2" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this)">
+                                                    <input type = "range" name = "num2" id = "w2" value = "0" min = "0" max = "100" step = "25" onchange = "showValue(this)">
 
-                                                        <span id = "range"> 50% </span>
-                                                        <div class="submit">
-                                                        <button type = "submit">Submit
+                                                       <p> Your Rating: <span id = "range"> 0% </span> Full </p>
+                                                       <div class="submit">
+                                                        <button type = "submit" name = "save">Submit
                                                         </button>
                                                     </div>
                                                     </form>
@@ -335,16 +305,13 @@
 
                                                 <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full  
-                                                </p>
-
-                                                    <form method = "POST" action = "/submit3">
+                                                     <form method = "POST" action = "/submit">
                                                     {% csrf_token %}
-                                                    <input type = "range" name = "num3" id = "w3" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this)">
+                                                    <input type = "range" name = "num3" id = "w3" value = "0" min = "0" max = "100" step = "25" onchange = "showValue(this)">
 
-                                                        <span id = "range"> 50% </span>
-                                                        <div class="submit">
-                                                        <button type = "submit">Submit
+                                                       <p> Your Rating: <span id = "range"> 0% </span> Full </p>
+                                                       <div class="submit">
+                                                        <button type = "submit" name = "save">Submit
                                                         </button>
                                                     </div>
                                                     </form>
@@ -355,16 +322,14 @@
 
                                                 <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full 
-                                                </p>
 
-                                                    <form method = "POST" action = "/submit4">
+                                                     <form method = "POST" action = "/submit">
                                                     {% csrf_token %}
-                                                    <input type = "range" name = "num4" id = "w4" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this)">
+                                                    <input type = "range" name = "num4" id = "w4" value = "0" min = "0" max = "100" step = "25" onchange = "showValue(this)">
 
-                                                        <span id = "range"> 50% </span>
-                                                        <div class="submit">
-                                                        <button type = "submit">Submit
+                                                       <p> Your Rating: <span id = "range"> 0% </span> Full </p>
+                                                       <div class="submit">
+                                                        <button type = "submit" name = "save">Submit
                                                         </button>
                                                         </div>
                                                     </form>
@@ -391,14 +356,11 @@
 
                                                  <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full  
-                                                </p>
-                                                    
-                                                    <form method = "POST" action = "/submit">
+                                                     <form method = "POST" action = "/submit">
                                                     {% csrf_token %}
-                                                    <input type = "range" name = "num" id = "w" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this)">
+                                                    <input type = "range" name = "num" id = "w" value = "0" min = "0" max = "100" step = "25" onchange = "showValue(this)">
 
-                                                        <span id = "range"> 50% </span>
+                                                       <p> Your Rating: <span id = "range"> 0% </span> Full </p>
                                                        <div class="submit">
                                                         <button type = "submit" name = "save">Submit
                                                         </button>
@@ -412,16 +374,14 @@
 
                                                 <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full 
-                                                </p>
 
-                                                    <form method = "POST" action = "/submit">
+                                                     <form method = "POST" action = "/submit">
                                                     {% csrf_token %}
-                                                    <input type = "range" name = "num1" id = "w1" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this)">
+                                                    <input type = "range" name = "num1" id = "w1" value = "0" min = "0" max = "100" step = "25" onchange = "showValue(this)">
 
-                                                        <span id = "range"> 50% </span>
-                                                        <div class="submit">
-                                                        <button type = "submit" name = >Submit
+                                                       <p> Your Rating: <span id = "range"> 0% </span> Full </p>
+                                                       <div class="submit">
+                                                        <button type = "submit" name = "save">Submit
                                                         </button>
                                                     </div>
                                                     </form>
@@ -433,16 +393,13 @@
 
                                                 <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full   
-                                                </p>
-
-                                                    <form method = "POST" action = "/submit2">
+                                                    <form method = "POST" action = "/submit">
                                                     {% csrf_token %}
-                                                    <input type = "range" name = "num2" id = "w2" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this)">
+                                                    <input type = "range" name = "num2" id = "w2" value = "0" min = "0" max = "100" step = "25" onchange = "showValue(this)">
 
-                                                        <span id = "range"> 50% </span>
-                                                        <div class="submit">
-                                                        <button type = "submit">Submit
+                                                       <p> Your Rating: <span id = "range"> 0% </span> Full </p>
+                                                       <div class="submit">
+                                                        <button type = "submit" name = "save">Submit
                                                         </button>
                                                     </div>
                                                     </form>
@@ -454,16 +411,14 @@
 
                                                 <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full  
-                                                </p>
 
-                                                    <form method = "POST" action = "/submit3">
+                                                     <form method = "POST" action = "/submit">
                                                     {% csrf_token %}
-                                                    <input type = "range" name = "num3" id = "w3" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this)">
+                                                    <input type = "range" name = "num3" id = "w3" value = "0" min = "0" max = "100" step = "25" onchange = "showValue(this)">
 
-                                                        <span id = "range"> 50% </span>
-                                                        <div class="submit">
-                                                        <button type = "submit">Submit
+                                                       <p> Your Rating: <span id = "range"> 0% </span> Full </p>
+                                                       <div class="submit">
+                                                        <button type = "submit" name = "save">Submit
                                                         </button>
                                                     </div>
                                                     </form>
@@ -474,16 +429,14 @@
 
                                                 <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full 
-                                                </p>
 
-                                                    <form method = "POST" action = "/submit4">
+                                                     <form method = "POST" action = "/submit">
                                                     {% csrf_token %}
-                                                    <input type = "range" name = "num4" id = "w4" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this)">
+                                                    <input type = "range" name = "num4" id = "w4" value = "0" min = "0" max = "100" step = "25" onchange = "showValue(this)">
 
-                                                        <span id = "range"> 50% </span>
-                                                        <div class="submit">
-                                                        <button type = "submit">Submit
+                                                       <p> Your Rating: <span id = "range"> 0% </span> Full </p>
+                                                       <div class="submit">
+                                                        <button type = "submit" name = "save">Submit
                                                         </button>
                                                         </div>
                                                     </form>
@@ -510,15 +463,12 @@
                                                 <p class="floor_number">Floor {{ floor.floor_number}}</p>
 
                                                  <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
-
-                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full  
-                                                </p>
                                                     
                                                     <form method = "POST" action = "/submit">
                                                     {% csrf_token %}
-                                                    <input type = "range" name = "num" id = "w" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this)">
+                                                    <input type = "range" name = "num" id = "w" value = "0" min = "0" max = "100" step = "25" onchange = "showValue(this)">
 
-                                                        <span id = "range"> 50% </span>
+                                                       <p> Your Rating: <span id = "range"> 0% </span> Full </p>
                                                        <div class="submit">
                                                         <button type = "submit" name = "save">Submit
                                                         </button>
@@ -532,16 +482,14 @@
 
                                                 <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full 
-                                                </p>
 
-                                                    <form method = "POST" action = "/submit">
+                                                     <form method = "POST" action = "/submit">
                                                     {% csrf_token %}
-                                                    <input type = "range" name = "num1" id = "w1" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this)">
+                                                    <input type = "range" name = "num1" id = "w1" value = "0" min = "0" max = "100" step = "25" onchange = "showValue(this)">
 
-                                                        <span id = "range"> 50% </span>
-                                                        <div class="submit">
-                                                        <button type = "submit" name = >Submit
+                                                       <p> Your Rating: <span id = "range"> 0% </span> Full </p>
+                                                       <div class="submit">
+                                                        <button type = "submit" name = "save">Submit
                                                         </button>
                                                     </div>
                                                     </form>
@@ -553,16 +501,13 @@
 
                                                 <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full   
-                                                </p>
-
-                                                    <form method = "POST" action = "/submit2">
+                                                     <form method = "POST" action = "/submit">
                                                     {% csrf_token %}
-                                                    <input type = "range" name = "num2" id = "w2" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this)">
+                                                    <input type = "range" name = "num2" id = "w2" value = "0" min = "0" max = "100" step = "25" onchange = "showValue(this)">
 
-                                                        <span id = "range"> 50% </span>
-                                                        <div class="submit">
-                                                        <button type = "submit">Submit
+                                                       <p> Your Rating: <span id = "range"> 0% </span> Full </p>
+                                                       <div class="submit">
+                                                        <button type = "submit" name = "save">Submit
                                                         </button>
                                                     </div>
                                                     </form>
@@ -574,16 +519,14 @@
 
                                                 <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full  
-                                                </p>
 
-                                                    <form method = "POST" action = "/submit3">
+                                                     <form method = "POST" action = "/submit">
                                                     {% csrf_token %}
-                                                    <input type = "range" name = "num3" id = "w3" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this)">
+                                                    <input type = "range" name = "num3" id = "w3" value = "0" min = "0" max = "100" step = "25" onchange = "showValue(this)">
 
-                                                        <span id = "range"> 50% </span>
-                                                        <div class="submit">
-                                                        <button type = "submit">Submit
+                                                       <p> Your Rating: <span id = "range"> 0% </span> Full </p>
+                                                       <div class="submit">
+                                                        <button type = "submit" name = "save">Submit
                                                         </button>
                                                     </div>
                                                     </form>
@@ -594,16 +537,14 @@
 
                                                 <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full 
-                                                </p>
 
-                                                    <form method = "POST" action = "/submit4">
+                                                     <form method = "POST" action = "/submit">
                                                     {% csrf_token %}
-                                                    <input type = "range" name = "num4" id = "w4" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this)">
+                                                    <input type = "range" name = "num4" id = "w4" value = "0" min = "0" max = "100" step = "25" onchange = "showValue(this)">
 
-                                                        <span id = "range"> 50% </span>
-                                                        <div class="submit">
-                                                        <button type = "submit">Submit
+                                                       <p> Your Rating: <span id = "range"> 0% </span> Full </p>
+                                                       <div class="submit">
+                                                        <button type = "submit" name = "save">Submit
                                                         </button>
                                                         </div>
                                                     </form>
@@ -631,15 +572,12 @@
                                                 <p class="floor_number">Floor {{ floor.floor_number}}</p>
 
                                                  <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
-
-                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full  
-                                                </p>
                                                     
                                                     <form method = "POST" action = "/submit">
                                                     {% csrf_token %}
-                                                    <input type = "range" name = "num" id = "w" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this)">
+                                                    <input type = "range" name = "num" id = "w" value = "0" min = "0" max = "100" step = "25" onchange = "showValue(this)">
 
-                                                        <span id = "range"> 50% </span>
+                                                       <p> Your Rating: <span id = "range"> 0% </span> Full </p>
                                                        <div class="submit">
                                                         <button type = "submit" name = "save">Submit
                                                         </button>
@@ -653,17 +591,15 @@
 
                                                 <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full 
-                                                </p>
-
                                                     <form method = "POST" action = "/submit">
                                                     {% csrf_token %}
-                                                    <input type = "range" name = "num1" id = "w1" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this)">
+                                                    <input type = "range" name = "num1" id = "w" value = "0" min = "0" max = "100" step = "25" onchange = "showValue(this)">
 
-                                                        <span id = "range"> 50% </span>
-                                                        <div class="submit">
-                                                        <button type = "submit" name = >Submit
+                                                       <p> Your Rating: <span id = "range"> 0% </span> Full </p>
+                                                       <div class="submit">
+                                                        <button type = "submit" name = "save">Submit
                                                         </button>
+
                                                     </div>
                                                     </form>
                                                 </div>
@@ -674,17 +610,15 @@
 
                                                 <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full   
-                                                </p>
-
-                                                    <form method = "POST" action = "/submit2">
+                                                   <form method = "POST" action = "/submit">
                                                     {% csrf_token %}
-                                                    <input type = "range" name = "num2" id = "w2" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this)">
+                                                    <input type = "range" name = "num2" id = "w" value = "0" min = "0" max = "100" step = "25" onchange = "showValue(this)">
 
-                                                        <span id = "range"> 50% </span>
-                                                        <div class="submit">
-                                                        <button type = "submit">Submit
+                                                       <p> Your Rating: <span id = "range"> 0% </span> Full </p>
+                                                       <div class="submit">
+                                                        <button type = "submit" name = "save">Submit
                                                         </button>
+
                                                     </div>
                                                     </form>
                                                 </div>
@@ -695,17 +629,16 @@
 
                                                 <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full  
-                                                </p>
 
-                                                    <form method = "POST" action = "/submit3">
+                                                   <form method = "POST" action = "/submit">
                                                     {% csrf_token %}
-                                                    <input type = "range" name = "num3" id = "w3" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this)">
+                                                    <input type = "range" name = "num3" id = "w" value = "0" min = "0" max = "100" step = "25" onchange = "showValue(this)">
 
-                                                        <span id = "range"> 50% </span>
-                                                        <div class="submit">
-                                                        <button type = "submit">Submit
+                                                       <p> Your Rating: <span id = "range"> 0% </span> Full </p>
+                                                       <div class="submit">
+                                                        <button type = "submit" name = "save">Submit
                                                         </button>
+
                                                     </div>
                                                     </form>
                                                 </div>
@@ -715,17 +648,15 @@
 
                                                 <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full 
-                                                </p>
-
-                                                    <form method = "POST" action = "/submit4">
+                                                    <form method = "POST" action = "/submit">
                                                     {% csrf_token %}
-                                                    <input type = "range" name = "num4" id = "w4" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this)">
+                                                    <input type = "range" name = "num4" id = "w" value = "0" min = "0" max = "100" step = "25" onchange = "showValue(this)">
 
-                                                        <span id = "range"> 50% </span>
-                                                        <div class="submit">
-                                                        <button type = "submit">Submit
+                                                       <p> Your Rating: <span id = "range"> 0% </span> Full </p>
+                                                       <div class="submit">
+                                                        <button type = "submit" name = "save">Submit
                                                         </button>
+
                                                         </div>
                                                     </form>
                                                 </div>
@@ -753,14 +684,12 @@
 
                                                  <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full  
-                                                </p>
                                                     
                                                     <form method = "POST" action = "/submit">
                                                     {% csrf_token %}
-                                                    <input type = "range" name = "numRange" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this)">
+                                                    <input type = "range" name = "num" id = "w" value = "0" min = "0" max = "100" step = "25" onchange = "showValue(this)">
 
-                                                        <span id = "range"> 50% </span>
+                                                       <p> Your Rating: <span id = "range"> 0% </span> Full </p>
                                                        <div class="submit">
                                                         <button type = "submit" name = "save">Submit
                                                         </button>
@@ -774,16 +703,13 @@
 
                                                 <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full 
-                                                </p>
-
-                                                    <form method = "POST" action = "/submit">
+                                                     <form method = "POST" action = "/submit">
                                                     {% csrf_token %}
-                                                    <input type = "range" name = "numRange1" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this)">
+                                                    <input type = "range" name = "num1" id = "w" value = "0" min = "0" max = "100" step = "25" onchange = "showValue(this)">
 
-                                                        <span id = "range"> 50% </span>
-                                                        <div class="submit">
-                                                        <button type = "submit" name = >Submit
+                                                       <p> Your Rating: <span id = "range"> 0% </span> Full </p>
+                                                       <div class="submit">
+                                                        <button type = "submit" name = "save">Submit
                                                         </button>
                                                     </div>
                                                     </form>
@@ -795,16 +721,14 @@
 
                                                 <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full   
-                                                </p>
 
-                                                    <form method = "POST" action = "/submit2">
+                                                     <form method = "POST" action = "/submit">
                                                     {% csrf_token %}
-                                                    <input type = "range" name = "numRange2" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this)">
+                                                    <input type = "range" name = "num2" id = "w" value = "0" min = "0" max = "100" step = "25" onchange = "showValue(this)">
 
-                                                        <span id = "range"> 50% </span>
-                                                        <div class="submit">
-                                                        <button type = "submit">Submit
+                                                       <p> Your Rating: <span id = "range"> 0% </span> Full </p>
+                                                       <div class="submit">
+                                                        <button type = "submit" name = "save">Submit
                                                         </button>
                                                     </div>
                                                     </form>
@@ -816,16 +740,14 @@
 
                                                 <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full  
-                                                </p>
 
-                                                    <form method = "POST" action = "/submit3">
+                                                     <form method = "POST" action = "/submit">
                                                     {% csrf_token %}
-                                                    <input type = "range" name = "numRange3" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this)">
+                                                    <input type = "range" name = "num3" id = "w" value = "0" min = "0" max = "100" step = "25" onchange = "showValue(this)">
 
-                                                        <span id = "range"> 50% </span>
-                                                        <div class="submit">
-                                                        <button type = "submit">Submit
+                                                       <p> Your Rating: <span id = "range"> 0% </span> Full </p>
+                                                       <div class="submit">
+                                                        <button type = "submit" name = "save">Submit
                                                         </button>
                                                     </div>
                                                     </form>
@@ -836,16 +758,14 @@
 
                                                 <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full 
-                                                </p>
 
-                                                    <form method = "POST" action = "/submit4">
+                                                     <form method = "POST" action = "/submit">
                                                     {% csrf_token %}
-                                                    <input type = "range" name = "numRange4" id = "myRange" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this)">
+                                                    <input type = "range" name = "num4" id = "w" value = "0" min = "0" max = "100" step = "25" onchange = "showValue(this)">
 
-                                                        <span id = "range"> 50% </span>
-                                                        <div class="submit">
-                                                        <button type = "submit">Submit
+                                                       <p> Your Rating: <span id = "range"> 0% </span> Full </p>
+                                                       <div class="submit">
+                                                        <button type = "submit" name = "save">Submit
                                                         </button>
                                                         </div>
                                                     </form>
@@ -858,6 +778,7 @@
                 </div>
                     
                 {% elif library.title == 'Library West' %}
+                    <br>
                     <h2 class="library_name">{{library.title}}</h2>
                     <div class="operation">
                         <h3>Hours of Operation</h3>
@@ -874,14 +795,12 @@
 
                                                  <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full  
-                                                </p>
                                                     
-                                                    <form method = "POST" action = "/submit">
+                                                   <form method = "POST" action = "/submit">
                                                     {% csrf_token %}
-                                                    <input type = "range" class="myRange" name = "numRange5" id = "weight" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this)">
+                                                    <input type = "range" name = "numRange5" id = "w" value = "0" min = "0" max = "100" step = "25" onchange = "showValue(this)">
 
-                                                        <span id = "range"> 50% </span>
+                                                       <p> Your Rating: <span id = "range"> 0% </span> Full </p>
                                                        <div class="submit">
                                                         <button type = "submit" name = "save">Submit
                                                         </button>
@@ -895,16 +814,15 @@
 
                                                 <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full 
-                                                </p>
+                                    
 
                                                     <form method = "POST" action = "/submit">
                                                     {% csrf_token %}
-                                                    <input type = "range" name = "numRange6" id = "weight1" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this)">
+                                                    <input type = "range" name = "numRange6" id = "w" value = "0" min = "0" max = "100" step = "25" onchange = "showValue(this)">
 
-                                                        <span id = "range"> 50% </span>
-                                                        <div class="submit">
-                                                        <button type = "submit" name = >Submit
+                                                       <p> Your Rating: <span id = "range"> 0% </span> Full </p>
+                                                       <div class="submit">
+                                                        <button type = "submit" name = "save">Submit
                                                         </button>
                                                     </div>
                                                     </form>
@@ -916,16 +834,14 @@
 
                                                 <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full   
-                                                </p>
-
-                                                    <form method = "POST" action = "/submit2">
+                
+                                                   <form method = "POST" action = "/submit">
                                                     {% csrf_token %}
-                                                    <input type = "range" name = "numRange7" id = "weight3" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this)">
+                                                    <input type = "range" name = "numRange7" id = "w" value = "0" min = "0" max = "100" step = "25" onchange = "showValue(this)">
 
-                                                        <span id = "range"> 50% </span>
-                                                        <div class="submit">
-                                                        <button type = "submit">Submit
+                                                       <p> Your Rating: <span id = "range"> 0% </span> Full </p>
+                                                       <div class="submit">
+                                                        <button type = "submit" name = "save">Submit
                                                         </button>
                                                     </div>
                                                     </form>
@@ -937,16 +853,13 @@
 
                                                 <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full  
-                                                </p>
-
-                                                    <form method = "POST" action = "/submit3">
+                                                    <form method = "POST" action = "/submit">
                                                     {% csrf_token %}
-                                                    <input type = "range" name = "numRange8" id = "weight4" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this)">
+                                                    <input type = "range" name = "numRange8" id = "w" value = "0" min = "0" max = "100" step = "25" onchange = "showValue(this)">
 
-                                                        <span id = "range"> 50% </span>
-                                                        <div class="submit">
-                                                        <button type = "submit">Submit
+                                                       <p> Your Rating: <span id = "range"> 0% </span> Full </p>
+                                                       <div class="submit">
+                                                        <button type = "submit" name = "save">Submit
                                                         </button>
                                                     </div>
                                                     </form>
@@ -966,16 +879,14 @@
 
                                                 <p>Current Capacity: {{ floor.current_capacity }}% Full </p>
 
-                                                <p>Your Rating:  {{ floor.rated_capacity }}% Full  
-                                                </p>
 
-                                                    <form method = "POST" action = "/submit3">
+                                                   <form method = "POST" action = "/submit">
                                                     {% csrf_token %}
-                                                    <input type = "range" name = "numRange9" id = "weight6" value = "50" min = "0" max = "100" steps = "10" onchange = "showValue(this)">
+                                                    <input type = "range" name = "numRange9" id = "w" value = "0" min = "0" max = "100" step = "25" onchange = "showValue(this)">
 
-                                                        <span id = "range"> 50% </span>
-                                                        <div class="submit">
-                                                        <button type = "submit">Submit
+                                                       <p> Your Rating: <span id = "range"> 0% </span> Full </p>
+                                                       <div class="submit">
+                                                        <button type = "submit" name = "save">Submit
                                                         </button>
                                                     </div>
                                                     </form>
@@ -988,17 +899,19 @@
 
                 {% endif %}
     	
-    {% endfor %}
+    {% endfor %} 
+
+ </div>
 </div>
-    	<div>
-    		<h2>
-    		<a href="https://ufl.evanced.info/dibs">
-				Call D!BS on a Study Area
-			</a>
-    		</h2>
-       	</div>
-        </div>
+</div>
+
+            <br><h2>
+            <a href="https://ufl.evanced.info/dibs">
+                Call D!BS on a Study Area
+            </a>
+            </h2><br><br>
     </body>
+
     <script>
         function get_nextsibling(n)
      {
@@ -1011,7 +924,9 @@
      }
     function showValue(self)
     {
-     get_nextsibling(self).innerHTML=self.value + "%";
+      get_nextsibling(self).innerHTML= "Your Rating: " +self.value + "% Full";
     }
     </script>
+
+
 </html>
